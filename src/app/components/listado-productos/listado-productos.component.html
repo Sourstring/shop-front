@@ -1,21 +1,21 @@
-<div>
-    <ng-template class="card" ngFor let-product [ngForOf]="listaProductos">
-      <div class="row">
-        <div class="card">
-          <div class="card-header">
-            <div>{{product.marca}} {{product.modelo}}</div>
-          </div>
-          <div class="card-body">
-            <div>
-              {{product.descripcion}}
+<div class="row d-flex justify-content-center">
+    <ng-template ngFor let-product [ngForOf]="listaProductos">
+        <div class="col-4 mt-2">
+          <div class="card">
+            <div class="card-header">
+              <div>{{product.marca}} {{product.modelo}}</div>
             </div>
-          </div>
-          <div class="card-footer">
-            <div>
-              ${{product.precio}}
+            <div class="card-body">
+              <div>
+                {{product.descripcion}}
+              </div>
+            </div>
+            <div class="card-footer">
+              <div>
+                ${{product.precio}}
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </ng-template>
 </div>
