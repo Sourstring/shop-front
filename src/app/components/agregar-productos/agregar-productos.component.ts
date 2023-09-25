@@ -31,7 +31,7 @@ export class AgregarProductosComponent implements OnInit{
       precio: this.precio,
       stock: this.stock,
       descripcion: this.descripcion,
-      categoria: this.categoria
+      category: this.categoria
     }
     this.product.crearProducto(product).subscribe((data: any) =>{
       console.log(data)
