@@ -4,16 +4,18 @@ import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { ListadoProductosComponent } from './components/listado-productos/listado-productos.component';
-import {ActivatedRoute, RouterLink, RouterOutlet} from "@angular/router";
-import { AppRoutingModule } from './app-routing.module';
 import { AgregarProductosComponent } from './components/agregar-productos/agregar-productos.component';
 import {RouterTestingModule} from "@angular/router/testing";
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoProductosComponent,
-    AgregarProductosComponent
+    AgregarProductosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import {RouterTestingModule} from "@angular/router/testing";
     HttpClientModule,
     AppRoutingModule,
     RouterLink,
-    RouterTestingModule
+    RouterTestingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
