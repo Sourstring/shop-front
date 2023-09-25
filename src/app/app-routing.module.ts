@@ -7,13 +7,8 @@ import {AppComponent} from "./app.component";
 
 
 const routes: Routes = [
-
-  {
-    path: '', redirectTo: 'home', pathMatch: 'full'
-  }
-  ,{path: 'home', component:  AppComponent},
-      {path: 'listado' , component: ListadoProductosComponent},
-      {path: 'agregar', component: AgregarProductosComponent}
+  {path: 'listado' , component: ListadoProductosComponent},
+  {path: 'agregar', component: AgregarProductosComponent}
 
 ]
 @NgModule({
@@ -21,6 +16,5 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -9,15 +9,11 @@ import {ProductosServiceService} from "../../services/productos-service.service"
 export class ListadoProductosComponent implements OnInit{
 
   listaProductos: any[] = [];
-  newListaProductos: any[] = [];
 
   ngOnInit(): void {
     console.log('Componente listado-productos iniciado');
     this.conseguirProductos();
     console.log(this.listaProductos)
-    this.listaProductos.forEach((producto) => {
-      console.log(producto)
-    })
   }
 
   constructor(private service: ProductosServiceService) {
@@ -25,19 +21,12 @@ export class ListadoProductosComponent implements OnInit{
 
   private conseguirProductos() {
     console.log('Conseguir productos');
-    this.service.conseguirProductos().subscribe((data) => {
-      this.listaProductos.push(data)
-    })
-    this.orderList();
-    console.log(this.service.conseguirProductos())
-  }
-
-  private orderList() {
-    this.listaProductos.map((producto) => {
-      producto.map((productos: any) => {
-        this.newListaProductos.push(productos)
+    this.service.conseguirProductos().subscribe((data: any) => {
+      data.forEach((producto: any)=> {
+        this.listaProductos.push(producto);
       })
     })
-    console.log(this.newListaProductos)
   }
+
+
 }
