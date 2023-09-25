@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductosServiceService} from "../services/productos-service.service";
+import {Component, NgIterable, OnInit} from '@angular/core';
+import {ProductosServiceService} from "../../services/productos-service.service";
 
 @Component({
   selector: 'app-listado-productos',
@@ -8,11 +8,12 @@ import {ProductosServiceService} from "../services/productos-service.service";
 })
 export class ListadoProductosComponent implements OnInit{
 
-  listaProductos: Object = [];
+  listaProductos: any[] = [];
 
   ngOnInit(): void {
     console.log('Componente listado-productos iniciado');
     this.conseguirProductos();
+    console.log(this.listaProductos)
   }
 
   constructor(private service: ProductosServiceService) {
@@ -20,6 +21,12 @@ export class ListadoProductosComponent implements OnInit{
 
   private conseguirProductos() {
     console.log('Conseguir productos');
-    this.listaProductos = this.service.conseguirProductos();
+    this.service.conseguirProductos().subscribe((data: any) => {
+      data.forEach((producto: any)=> {
+        this.listaProductos.push(producto);
+      })
+    })
   }
+
+
 }

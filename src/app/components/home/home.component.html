@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand bg-body-tertiary navi">
+  <div class="container-fluid">
+    <div class="navbar-collapse d-flex justify-content-center align-items-center">
+      <div class="navbar-nav">
+        <div class="row d-flex justify-content-around align-items-center text-center">
+          <div class="col">
+            <button class="btn btn-info" [routerLink]="['/agregar']" routerLinkActive="active">
+              <i class="fa fa-plus"></i>
+              Agregar
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-info" [routerLink]="['/listado']" routerLinkActive="active">
+              <i class="fa fa-list"></i>
+              Listado
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
