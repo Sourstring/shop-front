@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from "../../services/category.service";
 import {ProductosServiceService} from "../../services/productos-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-agregar-productos',
@@ -17,7 +18,7 @@ export class AgregarProductosComponent implements OnInit{
   descripcion: string = "";
   categorias: any[] = [];
   categoria: string = "";
-  constructor(private category: CategoryService, private product: ProductosServiceService) { }
+  constructor(private category: CategoryService, private product: ProductosServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerCategorias();
@@ -35,6 +36,7 @@ export class AgregarProductosComponent implements OnInit{
     }
     this.product.crearProducto(product).subscribe((data: any) =>{
       console.log(data)
+      this.router.navigate(['/listado'])
     })
   }
 
