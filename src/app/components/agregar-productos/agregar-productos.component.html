@@ -1,47 +1,91 @@
 <div>
-  <form (ngSubmit)="onSubmit()">
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col">
-          <span class="p-float-label">
-            <input type="text" pInputText [(ngModel)]="marca" name="marca">
-            <label htmlfor="marca">Marca</label>
-          </span>
-        </div>
-        <div class="col">
+  <div class="container mb-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-3">
+        <button (click)="changeForm('PRODUCTO')">Añadir Producto</button>
+      </div>
+      <div class="col-3">
+        <button (click)="changeForm('MARCA')">Añadir Marca</button>
+      </div>
+      <div class="col-3">
+        <button (click)="changeForm('CATEGORIA')">Añadir Categoria</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form *ngIf="formulario == 'PRODUCTO'" (ngSubmit)="onSubmitProduct()">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col">
+            <p-dropdown [options]="marcas" [(ngModel)]="marca" name="Marca"></p-dropdown>
+          </div>
+          <div class="col">
           <span class="p-float-label">
             <input type="text" pInputText [(ngModel)]="modelo" name="modelo">
             <label htmlfor="modelo">Modelo</label>
           </span>
-        </div>
-        <div class="col">
+          </div>
+          <div class="col">
           <span class="p-float-label">
             <input type="number" pInputText [(ngModel)]="precio" name="precio">
             <label htmlfor="precio">Precio</label>
           </span>
-        </div>
-        <div class="col">
+          </div>
+          <div class="col">
           <span class="p-float-label">
             <input type="number" pInputText [(ngModel)]="stock" name="stock">
             <label htmlfor="Stock">Stock</label>
           </span>
+          </div>
         </div>
-      </div>
-      <div class="row d-flex justify-content-center mt-3">
-        <div class="col">
+        <div class="row d-flex justify-content-center mt-3">
+          <div class="col">
           <span class="p-float-label">
             <input type="text" pInputText [(ngModel)]="descripcion" name="descripcion">
             <label htmlfor="descripcion">Descripcion</label>
           </span>
-        </div>
-        <div class="col">
-          <p-dropdown [options]="categorias" [(ngModel)]="categoria" name="categoria"></p-dropdown>
+          </div>
+          <div class="col">
+            <p-dropdown [options]="categorias" [(ngModel)]="categoria" name="categoria"></p-dropdown>
+          </div>
         </div>
       </div>
-    </div>
-    <br>
-    <div>
-      <button type="submit" pButton label="Guardar"></button>
-    </div>
-  </form>
+      <br>
+      <div class="d-flex justify-content-end" style="margin-right: 15%">
+        <button type="submit" pButton label="Guardar"></button>
+      </div>
+    </form>
+    <form *ngIf="formulario == 'MARCA'" (ngSubmit)="onSubmitMarca()">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col">
+          <span class="p-float-label">
+            <input type="text" pInputText [(ngModel)]="marcaOwn" name="marcaOwn">
+            <label htmlfor="marcaOwn">Marca</label>
+          </span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="d-flex justify-content-end" style="margin-right: 15%">
+        <button type="submit" pButton label="Guardar"></button>
+      </div>
+    </form>
+    <form *ngIf="formulario == 'CATEGORIA'" (ngSubmit)="onSubmitCategoria()">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col">
+          <span class="p-float-label">
+            <input type="text" pInputText [(ngModel)]="categoriaOwn" name="categoriaOwn">
+            <label htmlfor="categoriaOwn">Categoria</label>
+          </span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="d-flex justify-content-end" style="margin-right: 15%">
+        <button type="submit" pButton label="Guardar"></button>
+      </div>
+    </form>
+  </div>
 </div>
