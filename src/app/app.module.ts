@@ -14,6 +14,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {DropdownModule} from "primeng/dropdown";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SidebarModule} from "primeng/sidebar";
 
 @NgModule({
   declarations: [
@@ -22,19 +23,20 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     AgregarProductosComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterOutlet,
-    HttpClientModule,
-    AppRoutingModule,
-    RouterLink,
-    RouterTestingModule,
-    FormsModule,
-    InputTextModule,
-    ButtonModule,
-    DropdownModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterOutlet,
+        HttpClientModule,
+        AppRoutingModule,
+        RouterLink,
+        RouterTestingModule,
+        FormsModule,
+        InputTextModule,
+        ButtonModule,
+        DropdownModule,
+        BrowserAnimationsModule,
+        SidebarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

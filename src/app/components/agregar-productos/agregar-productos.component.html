@@ -1,16 +1,10 @@
 <div>
-  <div class="container mb-5">
-    <div class="row d-flex justify-content-center">
-      <div class="col-3">
-        <button (click)="changeForm('PRODUCTO')">Añadir Producto</button>
-      </div>
-      <div class="col-3">
-        <button (click)="changeForm('MARCA')">Añadir Marca</button>
-      </div>
-      <div class="col-3">
-        <button (click)="changeForm('CATEGORIA')">Añadir Categoria</button>
-      </div>
-    </div>
+  <div class="btn-group mb-5" style="margin-left:25%">
+    <button class="btn btn-dark" (click)="formulario = 'PRODUCTO'">Añadir Producto</button>
+
+    <button class="btn btn-dark" (click)="formulario = 'MARCA'">Añadir Marca</button>
+
+    <button class="btn btn-dark" (click)="formulario = 'CATEGORIA'">Añadir Categoria</button>
   </div>
   <div>
     <form *ngIf="formulario == 'PRODUCTO'" (ngSubmit)="onSubmitProduct()">

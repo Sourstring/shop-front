@@ -19,7 +19,7 @@ export class AgregarProductosComponent implements OnInit {
   descripcion: string = "";
   categorias: any[] = [];
   categoria: string = "";
-  formulario: string = "";
+  formulario: string = "PRODUCTO";
   marcaOwn: any;
   marcas: any[] = [];
   categoriaOwn: any;
