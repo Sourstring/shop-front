@@ -1,23 +1,37 @@
-<nav class="navbar navbar-expand bg-body-tertiary navi">
-  <div class="container-fluid">
-    <div class="navbar-collapse d-flex justify-content-center align-items-center">
-      <div class="navbar-nav">
-        <div class="row d-flex justify-content-around align-items-center text-center">
-          <div class="col">
-            <button class="btn btn-info" [routerLink]="['/agregar']" routerLinkActive="active">
-              <i class="fa fa-plus"></i>
-              Agregar
-            </button>
-          </div>
-          <div class="col">
-            <button class="btn btn-info" [routerLink]="['/listado']" routerLinkActive="active">
-              <i class="fa fa-list"></i>
-              Listado
-            </button>
-          </div>
-
+<div class="container ">
+  <div class="row d-flex p-2 justify-content-between align-items-center text-center">
+    <div class="col-1">
+      <p-button (click)="sideBarVisible = true" icon="bi bi-list"></p-button>
+    </div>
+  </div>
+</div>
+<div class="container ">
+  <p-sidebar styleClass="contenedorSide" [(visible)]="sideBarVisible">
+    <div class="py-5">
+      <div class="row d-flex justify-content-start align-items-center text-start">
+        <div class="col-12">
+          <button class="btn btn-outline-light botonSidebar" [routerLink]="['/agregar']" routerLinkActive="botonActivo" (click)="sideBarVisible=false">
+            <div class="row d-flex justify-content-start align-items-center text-start">
+              <div class="col-2">
+                <i class="title-color bi bi-box-fill"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="title-color">Formularios</h6>
+              </div>
+            </div>
+          </button>
+          <button class="btn btn-outline-light botonSidebar" [routerLink]="['/listado']" routerLinkActive="botonActivo" (click)="sideBarVisible=false">
+            <div class="row d-flex justify-content-start align-items-center text-start">
+              <div class="col-2">
+                <i class="title-color bi bi-list-ul"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="title-color">Productos</h6>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </p-sidebar>
+</div>

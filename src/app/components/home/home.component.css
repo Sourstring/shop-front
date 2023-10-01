@@ -1,3 +1,33 @@
 .navi{
   z-index: 2 !important;
 }
+
+
+.botonSidebar{
+  color: #fafafa;
+  min-width: 100%;
+  margin-bottom: 10px;
+  & h6{
+    font-family: Encode Sans !important;
+    font-size: 22px!important;
+    color: black!important;
+    font-weight: 500!important;
+    line-height: 28px!important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  & i {
+    color: black!important;
+    font-family: Encode Sans !important;
+    font-size: 24px!important;
+    font-weight: 500!important;
+    line-height: 28px!important;
+  }
+}
+.contenedorSide{
+  position:absolute!important;
+  width: 75vw!important;
+  height: 100vh!important;
+  border-radius:0 0 5px 0;
+  margin-top: 136px!important;
+}
