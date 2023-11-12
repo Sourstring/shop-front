@@ -6,26 +6,33 @@
 
     <button class="btn btn-dark" (click)="formulario = 'CATEGORIA'">Añadir Categoria</button>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="d-flex col-13 justify-content-center align-items-center text-center mb-5 seccion">
+        {{formulario}}
+      </div>
+    </div>
+  </div>
   <div>
     <form *ngIf="formulario == 'PRODUCTO'" (ngSubmit)="onSubmitProduct()">
       <div class="container">
         <div class="row d-flex justify-content-center">
-          <div class="col">
+          <div class="col-3">
             <p-dropdown [options]="marcas" [(ngModel)]="marca" name="Marca"></p-dropdown>
           </div>
-          <div class="col">
+          <div class="col-3">
           <span class="p-float-label">
             <input type="text" pInputText [(ngModel)]="modelo" name="modelo">
             <label htmlfor="modelo">Modelo</label>
           </span>
           </div>
-          <div class="col">
+          <div class="col-3">
           <span class="p-float-label">
             <input type="number" pInputText [(ngModel)]="precio" name="precio">
             <label htmlfor="precio">Precio</label>
           </span>
           </div>
-          <div class="col">
+          <div class="col-3">
           <span class="p-float-label">
             <input type="number" pInputText [(ngModel)]="stock" name="stock">
             <label htmlfor="Stock">Stock</label>
@@ -33,9 +40,9 @@
           </div>
         </div>
         <div class="row d-flex justify-content-center mt-3">
-          <div class="col">
+          <div class="col-9">
           <span class="p-float-label">
-            <input type="text" pInputText [(ngModel)]="descripcion" name="descripcion">
+            <input type="text" pInputText [(ngModel)]="descripcion" name="descripcion" class="inputDescripcion">
             <label htmlfor="descripcion">Descripcion</label>
           </span>
           </div>
