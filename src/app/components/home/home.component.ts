@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   sideBarVisible: boolean = false;
+
+  tituloActual : string = "Inicio";
+
+
+
+  changeTituloActual(pestaña : string){
+    this.tituloActual = pestaña;
+  }
+
+  ngOnInit(): void {
+    this.changeTituloActual("Inicio");
+  }
 
 }

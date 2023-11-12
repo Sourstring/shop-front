@@ -31,3 +31,13 @@
   border-radius:0 0 5px 0;
   margin-top: 136px!important;
 }
+
+.botonActivo{
+  background-color: #d9d3d3 !important;
+}
+
+.seccion{
+  font-size: 30px;
+  color: black;
+
+}
